@@ -18,12 +18,19 @@ class CalculatorVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        view.backgroundColor = .red
-        
-        
-        
-        
+        screen?.delegate(delegate: self) // self -> quem vai assinar esse contrato é a propria ViewController
     }
+    
+}
+
+extension CalculatorVC: CalculatorScreenDelegate {
+    func tappedCalculateButton() {
+        print(#function) // printar o nome da propria funcao
+    }
+    
+    func tappedBackButton() {
+        print(#function)
+    }
+    
     
 }

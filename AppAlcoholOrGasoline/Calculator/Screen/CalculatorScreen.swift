@@ -7,7 +7,18 @@
 
 import UIKit
 
+protocol CalculatorScreenDelegate: AnyObject {
+    func tappedCalculateButton()
+    func tappedBackButton()
+}
+
 class CalculatorScreen: UIView {
+    
+    private weak var delegate: CalculatorScreenDelegate?
+    
+    public func delegate(delegate: CalculatorScreenDelegate) {
+        self.delegate = delegate
+    }
     
     lazy var backgroundImage: UIImageView = {
         let img = UIImageView()
@@ -58,17 +69,25 @@ class CalculatorScreen: UIView {
         btn.clipsToBounds = true
         btn.layer.cornerRadius = 8
         btn.backgroundColor = UIColor(red: 128/255, green: 128/255, blue: 128/255, alpha: 1.0)
-        // btn.addTarget(<#T##Any?#>, action: <#T##Selector#>, for: <#T##UIControl.Event#>)
+        btn.addTarget(self, action: #selector(tappedCalculateButton), for: .touchUpInside)
         return btn
     }()
+    
+    @objc func tappedCalculateButton() {
+        delegate?.tappedCalculateButton()
+    }
     
     lazy var backButton: UIButton = {
         let btn = UIButton()
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.setImage(UIImage(named: "Botão Back"), for: .normal)
-        // btn.addTarget(<#T##Any?#>, action: <#T##Selector#>, for: <#T##UIControl.Event#>)
+        btn.addTarget(self, action: #selector(tappedBackButton), for: .touchUpInside)
         return btn
     }()
+    
+    @objc func tappedBackButton() {
+        delegate?.tappedBackButton()
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
