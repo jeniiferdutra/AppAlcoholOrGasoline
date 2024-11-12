@@ -47,6 +47,8 @@ class CalculatorVC: UIViewController {
 extension CalculatorVC: CalculatorScreenDelegate {
     func tappedCalculateButton() {
         
+        
+        
         if validateTextFields() {
             
             // Inicializa um objeto `NumberFormatter`, que é usado para converter texto em números e vice-versa.
@@ -63,15 +65,15 @@ extension CalculatorVC: CalculatorScreenDelegate {
             // Assim como antes, se a conversão falhar, o valor padrão será 0.0.
             let gasPrice: Double = (formatter.number(from: screen?.gasPriceTextField.text ?? "0.0") as? Double) ?? 0.0
             
-            // Verifica a relação entre o preço do etanol e o preço da gasolina.
-            // Se o preço do etanol dividido pelo preço da gasolina for maior que 0.7, recomenda-se usar gasolina.
+
+
             if ethanolPrice / gasPrice > 0.7 {
                 print("Melhor utilizar gasolina")
             }
-            // Caso contrário, recomenda-se usar etanol (álcool).
             else {
                 print("Melhor utilizar álcool")
             }
+
         }
 
     }
