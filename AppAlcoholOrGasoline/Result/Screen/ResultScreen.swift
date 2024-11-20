@@ -7,7 +7,18 @@
 
 import UIKit
 
+protocol ResultScreenDelegate: AnyObject {
+    func tappedBackButton()
+    func tappedCalculateButton()
+}
+
 class ResultScreen: UIView {
+    
+    private weak var delegate: ResultScreenDelegate?
+    
+    public func delegate(delegate: ResultScreenDelegate?) {
+        self.delegate = delegate
+    }
 
     lazy var backgroundImageView: UIImageView = {
         let img = UIImageView()
@@ -53,17 +64,25 @@ class ResultScreen: UIView {
         btn.clipsToBounds = true
         btn.layer.cornerRadius = 8
         btn.backgroundColor = UIColor(red: 230/255, green: 0/255, blue: 127/255, alpha: 1.0)
-        //btn.target(forAction: <#T##Selector#>, withSender: <#T##Any?#>)
+        btn.addTarget(self, action: #selector(tappedCalculateButton), for: .touchUpInside)
         return btn
     }()
+    
+    @objc func tappedCalculateButton() {
+        delegate?.tappedCalculateButton()
+    }
     
     lazy var backButton: UIButton = {
         let btn = UIButton()
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.setImage(UIImage(named: "Botão Back"), for: .normal)
-        //btn.target(forAction:  , withSender: <#T##Any?#>)
+        btn.addTarget(self, action: #selector(tappedBackButton), for: .touchUpInside)
         return btn
     }()
+    
+    @objc func tappedBackButton() {
+        delegate?.tappedBackButton()
+    }
 
     override init(frame: CGRect) {
         super.init(frame: frame)
