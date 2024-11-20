@@ -19,6 +19,7 @@ class CalculatorVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        hideKeyboardWhenTappedAround()
         alert = Alert(controller: self) // self -> a controladora vai ser a prorpia CalculatorVC
         screen?.delegate(delegate: self) // self -> quem vai assinar esse contrato é a propria ViewController
     }
