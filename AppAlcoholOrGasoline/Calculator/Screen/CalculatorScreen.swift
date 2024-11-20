@@ -45,6 +45,7 @@ class CalculatorScreen: UIView {
         tf.keyboardType = .decimalPad // campos que aceitam valores numéricos, como preços ou medidas
         tf.placeholder = "Preço do Álcool"
         tf.textColor = .darkGray
+        tf.addDoneButtonOnKeyboard()
         return tf
     }()
     
@@ -57,6 +58,7 @@ class CalculatorScreen: UIView {
         tf.keyboardType = .decimalPad
         tf.placeholder = "Preço do Gasolina"
         tf.textColor = .darkGray
+        tf.addDoneButtonOnKeyboard()
         return tf
     }()
     
