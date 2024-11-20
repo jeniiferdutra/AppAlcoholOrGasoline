@@ -6,7 +6,14 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		BA1716FF2F836735AED1E615 /* Pods_AppAlcoholOrGasoline.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D451B8A33F7DB12FBF9E273 /* Pods_AppAlcoholOrGasoline.framework */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
+		0D451B8A33F7DB12FBF9E273 /* Pods_AppAlcoholOrGasoline.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppAlcoholOrGasoline.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		29870C16A74A793661AE2CC2 /* Pods-AppAlcoholOrGasoline.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppAlcoholOrGasoline.release.xcconfig"; path = "Target Support Files/Pods-AppAlcoholOrGasoline/Pods-AppAlcoholOrGasoline.release.xcconfig"; sourceTree = "<group>"; };
+		44F4287908A2D3F621946E9D /* Pods-AppAlcoholOrGasoline.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppAlcoholOrGasoline.debug.xcconfig"; path = "Target Support Files/Pods-AppAlcoholOrGasoline/Pods-AppAlcoholOrGasoline.debug.xcconfig"; sourceTree = "<group>"; };
 		D0A84E062CD979BA00D9C37A /* AppAlcoholOrGasoline.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppAlcoholOrGasoline.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -36,17 +43,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA1716FF2F836735AED1E615 /* Pods_AppAlcoholOrGasoline.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A213D2AFB1064B5E9EC24E96 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				44F4287908A2D3F621946E9D /* Pods-AppAlcoholOrGasoline.debug.xcconfig */,
+				29870C16A74A793661AE2CC2 /* Pods-AppAlcoholOrGasoline.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		D0A84DFD2CD979BA00D9C37A = {
 			isa = PBXGroup;
 			children = (
 				D0A84E082CD979BA00D9C37A /* AppAlcoholOrGasoline */,
 				D0A84E072CD979BA00D9C37A /* Products */,
+				A213D2AFB1064B5E9EC24E96 /* Pods */,
+				FECA024960ADD24EB1CF6747 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +78,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		FECA024960ADD24EB1CF6747 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0D451B8A33F7DB12FBF9E273 /* Pods_AppAlcoholOrGasoline.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -65,9 +93,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D0A84E192CD979C000D9C37A /* Build configuration list for PBXNativeTarget "AppAlcoholOrGasoline" */;
 			buildPhases = (
+				3156766684C6BAE0DE2FB6A1 /* [CP] Check Pods Manifest.lock */,
 				D0A84E022CD979BA00D9C37A /* Sources */,
 				D0A84E032CD979BA00D9C37A /* Frameworks */,
 				D0A84E042CD979BA00D9C37A /* Resources */,
+				AD67D84B8AB554FB660ED00D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -77,8 +107,6 @@
 				D0A84E082CD979BA00D9C37A /* AppAlcoholOrGasoline */,
 			);
 			name = AppAlcoholOrGasoline;
-			packageProductDependencies = (
-			);
 			productName = AppAlcoholOrGasoline;
 			productReference = D0A84E062CD979BA00D9C37A /* AppAlcoholOrGasoline.app */;
 			productType = "com.apple.product-type.application";
@@ -127,6 +155,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3156766684C6BAE0DE2FB6A1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AppAlcoholOrGasoline-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AD67D84B8AB554FB660ED00D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AppAlcoholOrGasoline/Pods-AppAlcoholOrGasoline-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AppAlcoholOrGasoline/Pods-AppAlcoholOrGasoline-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AppAlcoholOrGasoline/Pods-AppAlcoholOrGasoline-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D0A84E022CD979BA00D9C37A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -140,6 +210,7 @@
 /* Begin XCBuildConfiguration section */
 		D0A84E1A2CD979C000D9C37A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 44F4287908A2D3F621946E9D /* Pods-AppAlcoholOrGasoline.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -170,6 +241,7 @@
 		};
 		D0A84E1B2CD979C000D9C37A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 29870C16A74A793661AE2CC2 /* Pods-AppAlcoholOrGasoline.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

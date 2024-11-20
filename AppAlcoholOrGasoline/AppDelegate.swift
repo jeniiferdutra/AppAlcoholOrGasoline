@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import IQKeyboardManagerSwift
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -13,7 +14,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        // Habilita o IQKeyboardManager para gerenciar automaticamente o comportamento do teclado.
+        // Quando ativado, ele move os campos de texto para cima quando o teclado aparece,
+        // evitando que o conteúdo da tela fique oculto.
+        IQKeyboardManager.shared.isEnabled = true
         return true
     }
 
